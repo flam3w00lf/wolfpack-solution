@@ -154,52 +154,51 @@ export default function Home() {
       </section>
 
       {/* Featured Products Banner */}
-      <section className="relative py-12 px-4">
-        <div className="mx-auto max-w-5xl">
+      <section className="relative py-16 px-4">
+        <div className="mx-auto max-w-7xl">
           <FadeIn>
-            <div className="rounded-2xl border border-wolf-orange/20 bg-gradient-to-r from-wolf-orange/10 via-wolf-card to-wolf-orange/10 p-8">
-              <div className="text-center mb-6">
-                <Badge className="bg-wolf-orange/20 text-wolf-orange border-wolf-orange/30 mb-3">
-                  Featured Products
+            <div className="rounded-3xl border border-wolf-orange/20 bg-gradient-to-br from-wolf-orange/10 via-wolf-card to-wolf-card p-8 sm:p-12">
+              <div className="text-center mb-10">
+                <Badge className="mb-4 bg-wolf-orange/20 text-wolf-orange border-wolf-orange/30 text-sm px-4 py-1">
+                  Best Sellers
                 </Badge>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                  Ready to ship? Grab the tools.
+                <h2 className="text-3xl sm:text-4xl font-bold text-white">
+                  Start building today
                 </h2>
+                <p className="mt-3 text-zinc-400 text-lg max-w-xl mx-auto">
+                  Our most popular tools to go from zero to shipped.
+                </p>
               </div>
-              <div className="grid gap-4 sm:grid-cols-3">
+
+              <div className="grid gap-6 sm:grid-cols-3">
                 {topPaidProducts.map((product) => (
-                  <a
+                  <div
                     key={product.slug}
-                    href={product.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block"
+                    className="rounded-2xl border border-white/5 bg-wolf-bg/60 p-6 flex flex-col"
                   >
-                    <div className="rounded-xl border border-white/10 bg-wolf-bg/50 p-5 transition-all hover:border-wolf-orange/30 hover:bg-wolf-card">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div
-                          className={`inline-flex rounded-lg bg-gradient-to-br ${product.gradient} p-2`}
-                        >
-                          <Package className="text-white" size={16} />
-                        </div>
-                        <div>
-                          <h3 className="text-sm font-semibold text-white group-hover:text-wolf-orange transition-colors">
-                            {product.title}
-                          </h3>
-                          <span className="text-xs text-wolf-orange font-semibold">
-                            {product.priceLabel}
-                          </span>
-                        </div>
-                      </div>
-                      <p className="text-xs text-zinc-400 line-clamp-2 mb-3">
-                        {product.description}
-                      </p>
-                      <div className="inline-flex items-center gap-1.5 rounded-lg bg-wolf-orange hover:bg-wolf-orange-dark text-white text-xs font-bold px-4 py-2 w-full justify-center transition-all group-hover:shadow-lg group-hover:shadow-orange-500/25">
-                        BUY NOW
-                        <ArrowRight size={12} />
-                      </div>
+                    <div
+                      className={`inline-flex rounded-xl bg-gradient-to-br ${product.gradient} p-3 mb-4 self-start`}
+                    >
+                      <Package className="text-white" size={20} />
                     </div>
-                  </a>
+                    <h3 className="text-lg font-semibold text-white mb-2">
+                      {product.title}
+                    </h3>
+                    <p className="text-sm text-zinc-400 mb-4 line-clamp-2 flex-1">
+                      {product.description}
+                    </p>
+                    <div className="text-2xl font-bold text-white mb-4">
+                      {product.priceLabel}
+                    </div>
+                    <a
+                      href={product.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full rounded-xl bg-wolf-orange hover:bg-wolf-orange-dark text-white font-bold text-center py-3.5 text-base shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all hover:scale-[1.02]"
+                    >
+                      BUY NOW
+                    </a>
+                  </div>
                 ))}
               </div>
             </div>
