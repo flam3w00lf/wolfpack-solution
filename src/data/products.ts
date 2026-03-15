@@ -13,6 +13,7 @@ export interface Product {
   features: string[];
   icon: string;
   comingSoon: boolean;
+  emailCapture: boolean;
   link: string;
   gradient: string;
 }
@@ -40,7 +41,8 @@ export const products: Product[] = [
     ],
     icon: "Scan",
     comingSoon: false,
-    link: "https://vibesniffer.com",
+    emailCapture: false,
+    link: "https://vibesniffer.com/pricing",
     gradient: "from-orange-500 to-red-600",
   },
   {
@@ -65,7 +67,8 @@ export const products: Product[] = [
     ],
     icon: "TrendingUp",
     comingSoon: false,
-    link: "https://gumroad.com",
+    emailCapture: false,
+    link: "https://wolfpacksolution.gumroad.com/l/vrioms",
     gradient: "from-green-500 to-emerald-600",
   },
   {
@@ -90,7 +93,8 @@ export const products: Product[] = [
     ],
     icon: "Code",
     comingSoon: false,
-    link: "https://gumroad.com",
+    emailCapture: false,
+    link: "https://wolfpacksolution.gumroad.com/l/knrqqt",
     gradient: "from-violet-500 to-purple-600",
   },
   {
@@ -115,6 +119,7 @@ export const products: Product[] = [
     ],
     icon: "MessageSquareCode",
     comingSoon: true,
+    emailCapture: true,
     link: "#",
     gradient: "from-blue-500 to-cyan-600",
   },
@@ -140,7 +145,8 @@ export const products: Product[] = [
     ],
     icon: "Workflow",
     comingSoon: false,
-    link: "https://github.com",
+    emailCapture: false,
+    link: "https://github.com/flam3w00lf/howl",
     gradient: "from-amber-500 to-orange-600",
   },
   {
@@ -165,6 +171,7 @@ export const products: Product[] = [
     ],
     icon: "LayoutDashboard",
     comingSoon: true,
+    emailCapture: false,
     link: "#",
     gradient: "from-pink-500 to-rose-600",
   },

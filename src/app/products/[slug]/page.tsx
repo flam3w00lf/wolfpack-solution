@@ -7,10 +7,12 @@ import {
   Star,
   Check,
   Package,
+  Mail,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { NewsletterForm } from "@/components/newsletter-form";
 import {
   products,
   getProductBySlug,
@@ -190,10 +192,20 @@ export default async function ProductDetailPage({
                 </p>
               )}
 
-              {product.comingSoon ? (
+              {product.comingSoon && product.emailCapture ? (
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Mail size={16} className="text-wolf-orange" />
+                    <span className="text-sm font-medium text-white">
+                      Get notified when it launches
+                    </span>
+                  </div>
+                  <NewsletterForm />
+                </div>
+              ) : product.comingSoon ? (
                 <Button
                   disabled
-                  className="w-full h-12 bg-white/10 text-zinc-400"
+                  className="w-full h-16 bg-white/10 text-zinc-400 text-xl rounded-xl"
                 >
                   Coming Soon
                 </Button>
@@ -202,10 +214,11 @@ export default async function ProductDetailPage({
                   href={product.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="block"
                 >
-                  <Button className="w-full h-12 bg-wolf-orange hover:bg-wolf-orange-dark text-white font-semibold">
-                    {product.price ? "Buy Now" : "Get It Free"}
-                    <ExternalLink size={16} className="ml-2" />
+                  <Button className="w-full h-16 bg-wolf-orange hover:bg-wolf-orange-dark text-white font-black text-xl tracking-wide shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/50 transition-all hover:scale-[1.03] rounded-xl">
+                    {product.price ? "BUY NOW" : "GET IT FREE"}
+                    <ExternalLink size={20} className="ml-2" />
                   </Button>
                 </a>
               )}
