@@ -1,65 +1,351 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import {
+  BookOpen,
+  Cpu,
+  Layers,
+  Flame,
+  Star,
+  Users,
+  Package,
+  Scan,
+  ArrowRight,
+  Zap,
+} from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem, GlowOrb } from "@/components/motion";
+import { NewsletterForm } from "@/components/newsletter-form";
+import { Badge } from "@/components/ui/badge";
+import { products } from "@/data/products";
+
+const pillars = [
+  {
+    icon: BookOpen,
+    title: "Guides",
+    description:
+      "From prompt engineering to full AI pipelines. Real knowledge, not regurgitated GPT slop.",
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/20",
+  },
+  {
+    icon: Layers,
+    title: "Frameworks",
+    description:
+      "Plug-and-play agent configs, workflow templates, and project scaffolds. Skip the boilerplate.",
+    color: "text-emerald-400",
+    bg: "bg-emerald-500/10",
+    border: "border-emerald-500/20",
+  },
+  {
+    icon: Cpu,
+    title: "Apps",
+    description:
+      "Tools like VibeSniffer that actually do things. Built by the pack, for the pack.",
+    color: "text-violet-400",
+    bg: "bg-violet-500/10",
+    border: "border-violet-500/20",
+  },
+  {
+    icon: Flame,
+    title: "The Forge",
+    description:
+      "A gamified building game where every level produces real, deployable infrastructure. Coming soon.",
+    color: "text-orange-400",
+    bg: "bg-orange-500/10",
+    border: "border-orange-500/20",
+    comingSoon: true,
+  },
+];
+
+const stats = [
+  { label: "Pack Members", value: "2,847", icon: Users },
+  { label: "Products Shipped", value: "6", icon: Package },
+  { label: "Vibe Scans", value: "12,400+", icon: Scan },
+  { label: "Lines Shipped", value: "50k+", icon: Zap },
+];
+
+const testimonials = [
+  {
+    quote:
+      "VibeSniffer gave me more actionable feedback in 30 seconds than my design review meetings give me in an hour.",
+    author: "Sarah K.",
+    role: "Indie Founder",
+    rating: 5,
+  },
+  {
+    quote:
+      "The Vibe Coder Kit saved me an entire weekend of setup. I went from idea to deployed MVP in 48 hours.",
+    author: "Marcus T.",
+    role: "AI Developer",
+    rating: 5,
+  },
+  {
+    quote:
+      "Finally, AI tools that aren't trying to sell me a $997 course. WolfPack just gives you the tools and gets out of the way.",
+    author: "Priya M.",
+    role: "Solo Developer",
+    rating: 5,
+  },
+];
 
 export default function Home() {
+  const featuredProducts = products.filter((p) => !p.comingSoon).slice(0, 4);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="relative overflow-hidden">
+      {/* Hero */}
+      <section className="relative min-h-[90vh] flex items-center justify-center px-4">
+        <GlowOrb className="w-[600px] h-[600px] bg-wolf-orange top-0 left-1/4" />
+        <GlowOrb className="w-[400px] h-[400px] bg-violet-600 bottom-20 right-1/4" />
+
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
+          <FadeIn delay={0.1}>
+            <Badge
+              variant="outline"
+              className="mb-6 border-wolf-orange/30 bg-wolf-orange/5 text-wolf-orange px-4 py-1.5 text-sm"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              🐺 The AI Entrepreneur Ecosystem
+            </Badge>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+              AI tools for
+              <br />
+              entrepreneurs who{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-wolf-orange to-amber-400">
+                build
+              </span>
+            </h1>
+          </FadeIn>
+
+          <FadeIn delay={0.35}>
+            <p className="mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-zinc-400 leading-relaxed">
+              Stop watching tutorials. Start shipping products. WolfPack gives you the
+              guides, frameworks, and tools to go from idea to revenue — no hand-holding,
+              no buzzwords.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.5}>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/products"
+                className="inline-flex h-12 items-center rounded-xl bg-wolf-orange px-8 text-base font-semibold text-white transition-all hover:bg-wolf-orange-dark hover:shadow-xl hover:shadow-orange-500/20 hover:scale-[1.02]"
+              >
+                Explore Products
+                <ArrowRight size={18} className="ml-2" />
+              </Link>
+              <Link
+                href="/forge"
+                className="inline-flex h-12 items-center rounded-xl border border-white/10 bg-white/5 px-8 text-base font-semibold text-white transition-all hover:bg-white/10 hover:border-white/20"
+              >
+                Enter The Forge
+                <Flame size={18} className="ml-2 text-wolf-orange" />
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Gradient fade at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-wolf-bg to-transparent" />
+      </section>
+
+      {/* Four Pillars */}
+      <section className="relative py-24 px-4">
+        <div className="mx-auto max-w-7xl">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white">
+                Four pillars. One ecosystem.
+              </h2>
+              <p className="mt-4 text-zinc-400 text-lg max-w-2xl mx-auto">
+                Everything connects. Guides teach you the concepts. Frameworks give you the
+                tools. Apps let you ship. The Forge makes it a game.
+              </p>
+            </div>
+          </FadeIn>
+
+          <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {pillars.map((pillar) => (
+              <StaggerItem key={pillar.title}>
+                <div
+                  className={`group relative rounded-2xl border ${pillar.border} ${pillar.bg} p-6 h-full transition-all hover:scale-[1.02] hover:shadow-lg`}
+                >
+                  {pillar.comingSoon && (
+                    <Badge className="absolute top-4 right-4 bg-wolf-orange/20 text-wolf-orange border-wolf-orange/30 text-xs">
+                      Soon
+                    </Badge>
+                  )}
+                  <div
+                    className={`inline-flex rounded-xl ${pillar.bg} p-3 mb-4`}
+                  >
+                    <pillar.icon className={`${pillar.color}`} size={24} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Featured Products */}
+      <section className="relative py-24 px-4 bg-gradient-to-b from-transparent via-wolf-card/50 to-transparent">
+        <div className="mx-auto max-w-7xl">
+          <FadeIn>
+            <div className="flex items-end justify-between mb-12">
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-white">
+                  From the pack
+                </h2>
+                <p className="mt-2 text-zinc-400">
+                  Tools and guides built by wolves, for wolves.
+                </p>
+              </div>
+              <Link
+                href="/products"
+                className="hidden sm:inline-flex items-center text-sm text-wolf-orange hover:text-wolf-orange-light transition-colors"
+              >
+                View all
+                <ArrowRight size={14} className="ml-1" />
+              </Link>
+            </div>
+          </FadeIn>
+
+          <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {featuredProducts.map((product) => (
+              <StaggerItem key={product.slug}>
+                <Link href={`/products/${product.slug}`} className="group block h-full">
+                  <div className="relative rounded-2xl border border-white/5 bg-wolf-card p-6 h-full transition-all hover:border-wolf-orange/20 hover:bg-wolf-card-hover hover:shadow-xl hover:shadow-orange-500/5">
+                    <div
+                      className={`inline-flex rounded-xl bg-gradient-to-br ${product.gradient} p-3 mb-4`}
+                    >
+                      <Package className="text-white" size={20} />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-wolf-orange transition-colors">
+                      {product.title}
+                    </h3>
+                    <p className="text-sm text-zinc-400 mb-4 line-clamp-2">
+                      {product.description}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-wolf-orange font-semibold">
+                        {product.priceLabel}
+                      </span>
+                      {product.rating > 0 && (
+                        <span className="flex items-center gap-1 text-sm text-zinc-500">
+                          <Star
+                            size={14}
+                            className="fill-amber-400 text-amber-400"
+                          />
+                          {product.rating}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <FadeIn className="mt-8 text-center sm:hidden">
+            <Link
+              href="/products"
+              className="inline-flex items-center text-sm text-wolf-orange hover:text-wolf-orange-light transition-colors"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              View all products
+              <ArrowRight size={14} className="ml-1" />
+            </Link>
+          </FadeIn>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Stats */}
+      <section className="py-24 px-4">
+        <div className="mx-auto max-w-5xl">
+          <StaggerContainer className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <StaggerItem key={stat.label}>
+                <div className="text-center">
+                  <stat.icon
+                    className="mx-auto mb-3 text-wolf-orange"
+                    size={28}
+                  />
+                  <div className="text-3xl sm:text-4xl font-bold text-white">
+                    {stat.value}
+                  </div>
+                  <div className="mt-1 text-sm text-zinc-500">{stat.label}</div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
-      </main>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 px-4 bg-gradient-to-b from-transparent via-wolf-card/30 to-transparent">
+        <div className="mx-auto max-w-7xl">
+          <FadeIn>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4">
+              The pack speaks
+            </h2>
+            <p className="text-center text-zinc-400 mb-12">
+              Real feedback from real builders.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid gap-6 md:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <StaggerItem key={i}>
+                <div className="rounded-2xl border border-white/5 bg-wolf-card p-6 h-full">
+                  <div className="flex gap-0.5 mb-4">
+                    {Array.from({ length: t.rating }).map((_, j) => (
+                      <Star
+                        key={j}
+                        size={16}
+                        className="fill-amber-400 text-amber-400"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-zinc-300 text-sm leading-relaxed mb-6">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div>
+                    <div className="text-sm font-medium text-white">
+                      {t.author}
+                    </div>
+                    <div className="text-xs text-zinc-500">{t.role}</div>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="py-24 px-4">
+        <div className="mx-auto max-w-2xl text-center">
+          <FadeIn>
+            <span className="text-4xl mb-4 block">🐺</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Join the pack
+            </h2>
+            <p className="text-zinc-400 mb-8 text-lg">
+              Weekly drops: new tools, AI building tips, and pack-only deals.
+              No spam. Unsubscribe anytime.
+            </p>
+            <NewsletterForm className="max-w-md mx-auto" />
+          </FadeIn>
+        </div>
+      </section>
     </div>
   );
 }
