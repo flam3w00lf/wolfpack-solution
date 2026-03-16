@@ -57,7 +57,7 @@ export function BuyButton({
         ) : (
           <ShoppingCart size={20} />
         )}
-        {loading ? "Redirecting..." : `Buy Now — ${priceLabel}`}
+        {loading ? "Redirecting..." : priceInCents === 0 ? `Get Free — ${priceLabel}` : `Buy Now — ${priceLabel}`}
       </button>
       {error && (
         <p className="mt-2 text-sm text-red-400 text-center">{error}</p>
