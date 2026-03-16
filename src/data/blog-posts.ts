@@ -161,7 +161,7 @@ The fix isn't "stop using AI." The fix is **adding a security layer to your AI-a
 
 ### What a Secure Vibe Coding Workflow Looks Like
 
-1. **Generate** — Use your AI tool of choice to write code fast
+1. **Generate** — Use your [AI coding tool](/blog/best-ai-coding-tools) of choice to write code fast
 2. **Scan** — Run the output through a security scanner like [VibeSniffer](https://vibesniffer.com) before committing
 3. **Review** — Actually read the security-relevant parts (auth, input handling, crypto, SQL)
 4. **Test** — Run your security tests and dependency audits
@@ -184,6 +184,12 @@ AI is the copilot. You're still the pilot. And the pilot checks the instruments 
 *Building something with AI? [VibeSniffer](https://vibesniffer.com) scans your codebase for the exact security anti-patterns AI tools produce. Check it out — your future self will thank you.*
 
 *Want the full vibe coding toolkit? Grab the [Vibe Coder Starter Kit](https://wolfpacksolution.gumroad.com) — templates, prompts, and workflows for shipping fast without shipping vulnerabilities.*
+
+---
+
+🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+
+📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
     `.trim(),
     date: "2026-03-14",
     readTime: "9 min",
@@ -383,7 +389,13 @@ Start small. Learn the mechanics. Scale what works.
 
 *Ready to go deeper? The [WolfPack DeFi Yield Farming Toolkit](https://wolfpacksolution.gumroad.com) gives you everything in this guide plus protocol comparison spreadsheets, risk assessment templates, step-by-step video walkthroughs, and a portfolio tracker. Built for beginners, priced at $27.*
 
-*Building DeFi tools or dApps? Check out [VibeSniffer](https://vibesniffer.com) for smart contract security scanning.*
+*Building DeFi tools or dApps? Check out [VibeSniffer](https://vibesniffer.com) for smart contract security scanning — read about the [security risks in AI-generated code](/blog/ai-code-security-2026) before you ship.*
+
+---
+
+🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+
+📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
     `.trim(),
     date: "2026-03-14",
     readTime: "10 min",
@@ -548,15 +560,21 @@ We wrote a full deep dive on this: [7 Security Risks in AI-Generated Code](/blog
 
 ## The Bottom Line
 
-Stop looking for the one tool that does everything. Use the right tool for the job. Layer in security scanning with [VibeSniffer](https://wolfpacksolution.com/vibesniffer). And remember: AI writes the first draft. You write the final one.
+Stop looking for the one tool that does everything. Use the right tool for the job. Layer in security scanning with [VibeSniffer](https://wolfpacksolution.com/vibesniffer). And remember: AI writes the first draft. You write the final one. If you're looking for free alternatives, check out our guide to [open-source AI tools](/blog/open-source-ai-tools-2026) that pair well with any of these.
 
-The developers getting 10x productivity aren't using better tools — they're reviewing every line, writing clear prompts, knowing when to let the AI cook and when to just write the code themselves. The tool matters less than how you use it.
+The developers getting 10x productivity aren't using better tools — they're reviewing every line, writing clear prompts, knowing when to let the AI cook and when to just write the code themselves. The tool matters less than how you use it. (Speaking of prompts — read why [prompt engineering is dead and prompt architecture is the future](/blog/prompt-engineering-is-dead).)
 
 Start with **Claude Code** or **Cursor** — pick whichever fits your workflow. Add VibeSniffer for security. Ship faster, ship safer.
 
 ---
 
 *Want the full setup? The [Vibe Coder Starter Kit](https://wolfpacksolution.gumroad.com) includes prompt templates, workflow guides, and configuration files for every tool on this list. Built by developers who actually use this stuff daily.*
+
+---
+
+🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+
+📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
     `.trim(),
     date: "2026-03-14",
     readTime: "9 min",
@@ -610,7 +628,15 @@ AI tools have democratized building. You don't need a CS degree to ship software
 
 That's the gap WolfPack fills. Not with more videos. With a game that makes you build real things.
 
+Want to see what building fast looks like in practice? Read how we [launched VibeSniffer in 72 hours](/blog/vibesniffer-launch-story) using the same principles. Or dive into why we believe [prompt architecture — not prompt engineering — is the future](/blog/prompt-engineering-is-dead).
+
 Welcome to the pack. \ud83d\udc3a
+
+---
+
+🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+
+📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
     `.trim(),
     date: "2026-03-10",
     readTime: "5 min",
@@ -658,7 +684,15 @@ We spent 4 hours on URL handling alone. If we did it again, we'd use a headless 
 
 Not life-changing money. But proof that people want this. And proof that you can go from idea to revenue in a weekend if you stop overthinking and start building.
 
+Since launch, VibeSniffer has evolved into a full AI code security scanner — read about the [7 security risks in AI-generated code](/blog/ai-code-security-2026) we keep finding. And if you're curious which [AI coding tools actually work](/blog/best-ai-coding-tools), we tested them all.
+
 That's the WolfPack way. \ud83d\udc3a
+
+---
+
+🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+
+📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
     `.trim(),
     date: "2026-03-07",
     readTime: "4 min",
@@ -704,9 +738,17 @@ That's architecture. That's what production AI looks like.
 
 If you're building AI products \u2014 or want to \u2014 stop thinking about prompts and start thinking about pipelines. The value isn't in crafting the perfect prompt. It's in designing systems that reliably produce valuable outputs.
 
-This is exactly what we teach in The Forge. Not "how to write prompts" but "how to architect AI systems that ship real products."
+This is exactly what we teach in The Forge. Not "how to write prompts" but "how to architect AI systems that ship real products." Read [why we built WolfPack](/blog/why-we-built-wolfpack) and how The Forge makes this real.
+
+Need tools to build your pipelines? See our breakdown of the [best AI coding tools in 2026](/blog/best-ai-coding-tools) and the [open-source alternatives](/blog/open-source-ai-tools-2026) you can run locally.
 
 The prompt is dead. The pipeline is alive. \ud83d\udc3a
+
+---
+
+🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+
+📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
     `.trim(),
     date: "2026-03-03",
     readTime: "6 min",
@@ -747,9 +789,15 @@ The OG. Fine-tune models, run inference, access thousands of pre-trained models.
 
 You don't need a $200/month API budget to build with AI. Open-source tools let you prototype locally, test cheaply, and only pay for API calls in production.
 
-The best AI builders we know use a mix of everything. Open source for development, cloud APIs for production, and their own orchestration layer to tie it all together.
+The best AI builders we know use a mix of everything. Open source for development, cloud APIs for production, and their own orchestration layer to tie it all together. For the full picture on commercial tools, check our [best AI coding tools in 2026](/blog/best-ai-coding-tools) breakdown. And when you're ready to think about prompts as infrastructure, read [why prompt architecture is replacing prompt engineering](/blog/prompt-engineering-is-dead).
 
 That's the stack. Now go build something. \ud83d\udc3a
+
+---
+
+🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+
+📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
     `.trim(),
     date: "2026-02-28",
     readTime: "5 min",
