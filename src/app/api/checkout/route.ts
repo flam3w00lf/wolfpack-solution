@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { getProductBySlug } from "@/data/products";
 
 export async function POST(req: NextRequest) {
@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     const { productSlug, priceInCents } = await req.json();
 
     const product = getProductBySlug(productSlug);
-    if (!product || !product.price) {
+    if (!product || !product.price || product.comingSoon || product.buyRoute !== "stripe") {
       return NextResponse.json(
         { error: "Product not found or not purchasable" },
         { status: 400 }
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
     const origin = req.headers.get("origin") || "https://wolfpacksolution.com";
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       mode: "payment",
       line_items: [
         {

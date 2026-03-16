@@ -1,15 +1,12 @@
 export const dynamic = "force-dynamic";
 
 import { notFound } from "next/navigation";
-import { createClient } from "@supabase/supabase-js";
+import { getSupabaseAdmin } from "@/lib/supabase-admin";
+import { getStripe } from "@/lib/stripe";
 import { getProductBySlug } from "@/data/products";
-import { Package, Download, Clock, AlertTriangle } from "lucide-react";
+import { Package, Clock, AlertTriangle } from "lucide-react";
 import Link from "next/link";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import { DownloadButton } from "@/components/download-button";
 
 const PRODUCT_FILES: Record<string, string> = {
   "defi-yield-farming-toolkit": "defi-toolkit.pdf",
@@ -17,16 +14,8 @@ const PRODUCT_FILES: Record<string, string> = {
   "ai-code-prompt-pack": "ai-prompt-pack.pdf",
 };
 
-export default async function DownloadPage({
-  params,
-}: {
-  params: Promise<{ token: string }>;
-}) {
-  const { token } = await params;
-
-  // Check if this is a Stripe session ID (from success_url redirect)
-  // or a download token
-  let purchase;
+async function getPurchase(token: string) {
+  const supabase = getSupabaseAdmin();
 
   // First try as download token
   const { data: byToken } = await supabase
@@ -35,20 +24,50 @@ export default async function DownloadPage({
     .eq("download_token", token)
     .single();
 
-  if (byToken) {
-    purchase = byToken;
-  } else {
-    // Try as Stripe session ID
-    const { data: bySession } = await supabase
-      .from("purchases")
-      .select("*")
-      .eq("stripe_session_id", token)
-      .single();
+  if (byToken) return byToken;
 
-    if (bySession) {
-      purchase = bySession;
+  // Try as Stripe session ID
+  const { data: bySession } = await supabase
+    .from("purchases")
+    .select("*")
+    .eq("stripe_session_id", token)
+    .single();
+
+  if (bySession) return bySession;
+
+  // Race condition: webhook hasn't fired yet. Check if this is a valid
+  // Stripe session and wait briefly for the webhook to process.
+  if (token.startsWith("cs_")) {
+    try {
+      const session = await getStripe().checkout.sessions.retrieve(token);
+      if (session.payment_status === "paid") {
+        // Webhook hasn't processed yet — wait and retry up to 3 times
+        for (let i = 0; i < 3; i++) {
+          await new Promise((r) => setTimeout(r, 2000));
+          const { data: retryData } = await supabase
+            .from("purchases")
+            .select("*")
+            .eq("stripe_session_id", token)
+            .single();
+          if (retryData) return retryData;
+        }
+      }
+    } catch {
+      // Invalid session ID — fall through to notFound
     }
   }
+
+  return null;
+}
+
+export default async function DownloadPage({
+  params,
+}: {
+  params: Promise<{ token: string }>;
+}) {
+  const { token } = await params;
+
+  const purchase = await getPurchase(token);
 
   if (!purchase) {
     notFound();
@@ -86,17 +105,11 @@ export default async function DownloadPage({
 
           {canDownload ? (
             <>
-              <a
-                href={`/products/${fileName}`}
-                download
-                onClick={async () => {
-                  // Download count is incremented client-side via API
-                }}
-                className="inline-flex items-center gap-2 rounded-xl bg-wolf-orange hover:bg-wolf-orange-dark text-white font-bold text-lg px-8 py-4 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/50 transition-all hover:scale-[1.03]"
-              >
-                <Download size={20} />
-                Download {fileName}
-              </a>
+              <DownloadButton
+                token={purchase.download_token}
+                fileName={fileName}
+                fileUrl={`/products/${fileName}`}
+              />
 
               <div className="mt-6 space-y-2 text-sm text-zinc-500">
                 <div className="flex items-center justify-center gap-2">

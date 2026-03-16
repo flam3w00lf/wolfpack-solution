@@ -1,12 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
-import { createClient } from "@supabase/supabase-js";
+import { getStripe } from "@/lib/stripe";
+import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import crypto from "crypto";
-
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 export async function POST(req: NextRequest) {
   const body = await req.text();
@@ -18,7 +13,7 @@ export async function POST(req: NextRequest) {
 
   let event;
   try {
-    event = stripe.webhooks.constructEvent(
+    event = getStripe().webhooks.constructEvent(
       body,
       sig,
       process.env.STRIPE_WEBHOOK_SECRET!
@@ -39,7 +34,7 @@ export async function POST(req: NextRequest) {
 
     const downloadToken = crypto.randomUUID();
 
-    const { error } = await supabaseAdmin.from("purchases").insert({
+    const { error } = await getSupabaseAdmin().from("purchases").insert({
       stripe_session_id: session.id,
       product_slug: productSlug,
       customer_email: session.customer_details?.email || null,
