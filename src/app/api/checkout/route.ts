@@ -45,33 +45,41 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ checkoutUrl: `${origin}/download/${downloadToken}` });
     }
 
-    const session = await getStripe().checkout.sessions.create({
-      mode: "payment",
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: product.title,
-              description: product.description,
+    let session;
+    try {
+      session = await getStripe().checkout.sessions.create({
+        mode: "payment",
+        line_items: [
+          {
+            price_data: {
+              currency: "usd",
+              product_data: {
+                name: product.title,
+                description: product.description,
+              },
+              unit_amount: priceInCents,
             },
-            unit_amount: priceInCents,
+            quantity: 1,
           },
-          quantity: 1,
+        ],
+        metadata: {
+          productSlug: product.slug,
         },
-      ],
-      metadata: {
-        productSlug: product.slug,
-      },
-      success_url: `${origin}/download/{CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/products/${product.slug}`,
-    });
+        success_url: `${origin}/download/{CHECKOUT_SESSION_ID}`,
+        cancel_url: `${origin}/products/${product.slug}`,
+      });
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : "Unknown Stripe error";
+      console.error("Stripe checkout.sessions.create failed:", message, e);
+      return NextResponse.json({ error: message }, { status: 500 });
+    }
 
     return NextResponse.json({ checkoutUrl: session.url });
-  } catch (error) {
-    console.error("Checkout error:", error);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Checkout error:", message, error);
     return NextResponse.json(
-      { error: "Failed to create checkout session" },
+      { error: message },
       { status: 500 }
     );
   }
