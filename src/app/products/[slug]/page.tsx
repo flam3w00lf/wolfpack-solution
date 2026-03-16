@@ -9,6 +9,7 @@ import {
   Package,
   Mail,
 } from "lucide-react";
+import { BuyButton } from "@/components/buy-button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -209,6 +210,13 @@ export default async function ProductDetailPage({
                 >
                   Coming Soon
                 </Button>
+              ) : product.buyRoute === "stripe" && product.price ? (
+                <BuyButton
+                  productSlug={product.slug}
+                  priceInCents={Math.round(product.price * 100)}
+                  priceLabel={product.priceLabel}
+                  className="h-16"
+                />
               ) : (
                 <a
                   href={product.link}

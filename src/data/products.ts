@@ -15,6 +15,7 @@ export interface Product {
   comingSoon: boolean;
   emailCapture: boolean;
   link: string;
+  buyRoute: "stripe" | "external" | "none";
   gradient: string;
 }
 
@@ -43,6 +44,7 @@ export const products: Product[] = [
     comingSoon: false,
     emailCapture: false,
     link: "https://vibesniffer.com/pricing",
+    buyRoute: "external",
     gradient: "from-orange-500 to-red-600",
   },
   {
@@ -68,7 +70,8 @@ export const products: Product[] = [
     icon: "TrendingUp",
     comingSoon: false,
     emailCapture: false,
-    link: "https://wolfpacksolution.gumroad.com/l/vrioms",
+    link: "/products/defi-yield-farming-toolkit",
+    buyRoute: "stripe",
     gradient: "from-green-500 to-emerald-600",
   },
   {
@@ -94,7 +97,8 @@ export const products: Product[] = [
     icon: "Code",
     comingSoon: false,
     emailCapture: false,
-    link: "https://wolfpacksolution.gumroad.com/l/knrqqt",
+    link: "/products/vibe-coder-starter-kit",
+    buyRoute: "stripe",
     gradient: "from-violet-500 to-purple-600",
   },
   {
@@ -121,6 +125,7 @@ export const products: Product[] = [
     comingSoon: true,
     emailCapture: true,
     link: "#",
+    buyRoute: "none",
     gradient: "from-blue-500 to-cyan-600",
   },
   {
@@ -147,6 +152,7 @@ export const products: Product[] = [
     comingSoon: false,
     emailCapture: false,
     link: "https://github.com/flam3w00lf/howl",
+    buyRoute: "external",
     gradient: "from-amber-500 to-orange-600",
   },
   {
@@ -173,6 +179,7 @@ export const products: Product[] = [
     comingSoon: true,
     emailCapture: false,
     link: "#",
+    buyRoute: "none",
     gradient: "from-pink-500 to-rose-600",
   },
 ];

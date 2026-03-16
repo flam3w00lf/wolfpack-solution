@@ -17,6 +17,7 @@ import { FadeIn, StaggerContainer, StaggerItem, GlowOrb } from "@/components/mot
 import { NewsletterForm } from "@/components/newsletter-form";
 import { Badge } from "@/components/ui/badge";
 import { products } from "@/data/products";
+import { BuyButton } from "@/components/buy-button";
 
 const pillars = [
   {
@@ -190,14 +191,23 @@ export default function Home() {
                     <div className="text-2xl font-bold text-white mb-4">
                       {product.priceLabel}
                     </div>
-                    <a
-                      href={product.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full rounded-xl bg-wolf-orange hover:bg-wolf-orange-dark text-white font-bold text-center py-3.5 text-base shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all hover:scale-[1.02]"
-                    >
-                      BUY NOW
-                    </a>
+                    {product.buyRoute === "stripe" && product.price ? (
+                      <BuyButton
+                        productSlug={product.slug}
+                        priceInCents={Math.round(product.price * 100)}
+                        priceLabel={product.priceLabel}
+                        className="py-3.5 text-base font-bold"
+                      />
+                    ) : (
+                      <a
+                        href={product.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full rounded-xl bg-wolf-orange hover:bg-wolf-orange-dark text-white font-bold text-center py-3.5 text-base shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all hover:scale-[1.02]"
+                      >
+                        BUY NOW
+                      </a>
+                    )}
                   </div>
                 ))}
               </div>
