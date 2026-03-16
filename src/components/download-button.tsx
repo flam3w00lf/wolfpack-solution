@@ -6,10 +6,10 @@ import { Download, Loader2 } from "lucide-react";
 interface DownloadButtonProps {
   token: string;
   fileName: string;
-  fileUrl: string;
+  fileUrl?: string; // kept for backwards compat but no longer used
 }
 
-export function DownloadButton({ token, fileName, fileUrl }: DownloadButtonProps) {
+export function DownloadButton({ token, fileName }: DownloadButtonProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -25,14 +25,27 @@ export function DownloadButton({ token, fileName, fileUrl }: DownloadButtonProps
       });
 
       if (!res.ok) {
-        const data = await res.json();
-        setError(data.error || "Download failed");
+        // Try to parse error JSON; the response might not be JSON if server errored
+        try {
+          const data = await res.json();
+          setError(data.error || "Download failed");
+        } catch {
+          setError("Download failed");
+        }
         setLoading(false);
         return;
       }
 
-      // Trigger the actual file download
-      window.location.href = fileUrl;
+      // API now returns the PDF binary — trigger browser download
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      a.remove();
     } catch {
       setError("Download failed. Please try again.");
     } finally {

@@ -14,6 +14,9 @@ const PRODUCT_FILES: Record<string, string> = {
   "ai-code-prompt-pack": "ai-prompt-pack.pdf",
 };
 
+// NOTE: PDFs are served securely through /api/download (not from public/).
+// The fileUrl prop on DownloadButton is unused; downloads go through the API.
+
 async function getPurchase(token: string) {
   const supabase = getSupabaseAdmin();
 
