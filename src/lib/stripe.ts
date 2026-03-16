@@ -8,14 +8,10 @@ export function getStripe(): Stripe {
     if (!key) {
       throw new Error("STRIPE_SECRET_KEY is not set");
     }
-    _stripe = new Stripe(key);
+    _stripe = new Stripe(key, {
+      apiVersion: "2024-12-18.acacia" as any,
+      httpClient: Stripe.createFetchHttpClient(),
+    });
   }
   return _stripe;
 }
-
-// Re-export for backwards compat — will throw at runtime if STRIPE_SECRET_KEY missing
-export const stripe = new Proxy({} as Stripe, {
-  get(_, prop) {
-    return (getStripe() as any)[prop];
-  },
-});
