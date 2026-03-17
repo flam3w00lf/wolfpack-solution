@@ -177,19 +177,22 @@ Here's what to do this week:
 - Add input validation to any endpoint that's currently trusting raw user data
 - Switch any \`Math.random()\` token generation to \`crypto.randomUUID()\`
 
-AI is the copilot. You're still the pilot. And the pilot checks the instruments before takeoff.
+AI is the copilot. You're still the pilot. And the pilot checks the instruments before takeoff. If you're working with [open-source AI tools](/blog/open-source-ai-tools-2026), these security practices apply even more — there's no vendor safety net.
 
 ---
 
 *Building something with AI? [VibeSniffer](https://vibesniffer.com) scans your codebase for the exact security anti-patterns AI tools produce. Check it out — your future self will thank you.*
 
-*Want the full vibe coding toolkit? Grab the [Vibe Coder Starter Kit](https://wolfpacksolution.gumroad.com) — templates, prompts, and workflows for shipping fast without shipping vulnerabilities.*
+*Want the full vibe coding toolkit? Grab the [Vibe Coder Starter Kit ($47)](https://wolfpacksolution.gumroad.com/l/knrqqt) — templates, prompts, and workflows for shipping fast without shipping vulnerabilities.*
 
 ---
 
-🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+🐺 **WolfPack Products:**
+- [AI Prompt Pack ($9.99)](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack) — 200 battle-tested AI coding prompts
+- [DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms) — Strategies, risk frameworks, and yield calculators
+- [Vibe Coder Starter Kit ($47)](https://wolfpacksolution.gumroad.com/l/knrqqt) — Templates, security checklist, and deployment playbook
 
-📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
+👉 [Browse all products →](https://wolfpacksolution.gumroad.com)
     `.trim(),
     date: "2026-03-14",
     readTime: "9 min",
@@ -205,7 +208,7 @@ AI is the copilot. You're still the pilot. And the pilot checks the instruments 
     content: `
 Let's get something out of the way: most DeFi content is either written by people trying to sell you their token or by people who've never actually used a DEX. This guide is neither.
 
-We've been in DeFi since before "yield farming" was a term. We've made money. We've lost money. We've spent weekends untangling impermanent loss math at 3am. And we built a [DeFi Yield Farming Toolkit](https://wolfpacksolution.gumroad.com) specifically because we wished something like it existed when we started.
+We've been in DeFi since before "yield farming" was a term. We've made money. We've lost money. We've spent weekends untangling impermanent loss math at 3am. And we built a [DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms) specifically because we wished something like it existed when we started.
 
 This is the guide we wish someone had given us on day one. No shilling, no hopium, no "number go up" analysis. Just how it works and how to not get wrecked.
 
@@ -347,7 +350,7 @@ DeFi yields don't disappear because the market drops. If you're in a stablecoin 
 - **DefiLlama** — The best dashboard for comparing protocols, TVL, and real yield data
 - **Zapper / Zerion** — Portfolio tracking across chains
 - **Revoke.cash** — Check and revoke token approvals (security hygiene)
-- **Our [DeFi Yield Farming Toolkit](https://wolfpacksolution.gumroad.com)** — Spreadsheet templates for tracking positions, calculating real yields, risk assessment frameworks, and step-by-step playbooks for each strategy above
+- **Our [DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms)** — Spreadsheet templates for tracking positions, calculating real yields, risk assessment frameworks, and step-by-step playbooks for each strategy above
 
 ## How to Track Your Actual Returns
 
@@ -360,7 +363,7 @@ Track these numbers for every position:
 4. **Current position value** (including impermanent loss)
 5. **Net return** = (Current value + Rewards claimed) - (Principal + Gas costs)
 
-If you're not tracking this, you're gambling. Our [DeFi Toolkit](https://wolfpacksolution.gumroad.com) includes a Google Sheets tracker that does this math for you automatically.
+If you're not tracking this, you're gambling. Our [DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms) includes a Google Sheets tracker that does this math for you automatically.
 
 ## A Realistic Timeline
 
@@ -383,19 +386,22 @@ The people who make money consistently in DeFi are not the ones chasing 10,000% 
 - Manage risk like adults
 - Never deposit more than they can afford to lose
 
-Start small. Learn the mechanics. Scale what works.
+Start small. Learn the mechanics. Scale what works. And if you're building DeFi tools with AI, make sure to read about the [best AI coding tools in 2026](/blog/best-ai-coding-tools) and [why we built WolfPack](/blog/why-we-built-wolfpack) — a platform designed to turn learning into real products.
 
 ---
 
-*Ready to go deeper? The [WolfPack DeFi Yield Farming Toolkit](https://wolfpacksolution.gumroad.com) gives you everything in this guide plus protocol comparison spreadsheets, risk assessment templates, step-by-step video walkthroughs, and a portfolio tracker. Built for beginners, priced at $27.*
+*Ready to go deeper? The [WolfPack DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms) gives you everything in this guide plus protocol comparison spreadsheets, risk assessment templates, step-by-step video walkthroughs, and a portfolio tracker. Built for beginners who want real strategies.*
 
 *Building DeFi tools or dApps? Check out [VibeSniffer](https://vibesniffer.com) for smart contract security scanning — read about the [security risks in AI-generated code](/blog/ai-code-security-2026) before you ship.*
 
 ---
 
-🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+🐺 **WolfPack Products:**
+- [AI Prompt Pack ($9.99)](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack) — 200 battle-tested AI coding prompts
+- [DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms) — Strategies, risk frameworks, and yield calculators
+- [Vibe Coder Starter Kit ($47)](https://wolfpacksolution.gumroad.com/l/knrqqt) — Templates, security checklist, and deployment playbook
 
-📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
+👉 [Browse all products →](https://wolfpacksolution.gumroad.com)
     `.trim(),
     date: "2026-03-14",
     readTime: "10 min",
@@ -568,13 +574,16 @@ Start with **Claude Code** or **Cursor** — pick whichever fits your workflow. 
 
 ---
 
-*Want the full setup? The [Vibe Coder Starter Kit](https://wolfpacksolution.gumroad.com) includes prompt templates, workflow guides, and configuration files for every tool on this list. Built by developers who actually use this stuff daily.*
+*Want the full setup? The [Vibe Coder Starter Kit ($47)](https://wolfpacksolution.gumroad.com/l/knrqqt) includes prompt templates, workflow guides, and configuration files for every tool on this list. Built by developers who actually use this stuff daily.*
 
 ---
 
-🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+🐺 **WolfPack Products:**
+- [AI Prompt Pack ($9.99)](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack) — 200 battle-tested AI coding prompts
+- [DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms) — Strategies, risk frameworks, and yield calculators
+- [Vibe Coder Starter Kit ($47)](https://wolfpacksolution.gumroad.com/l/knrqqt) — Templates, security checklist, and deployment playbook
 
-📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
+👉 [Browse all products →](https://wolfpacksolution.gumroad.com)
     `.trim(),
     date: "2026-03-14",
     readTime: "9 min",
@@ -634,9 +643,12 @@ Welcome to the pack. \ud83d\udc3a
 
 ---
 
-🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+🐺 **WolfPack Products:**
+- [AI Prompt Pack ($9.99)](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack) — 200 battle-tested AI coding prompts
+- [DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms) — Strategies, risk frameworks, and yield calculators
+- [Vibe Coder Starter Kit ($47)](https://wolfpacksolution.gumroad.com/l/knrqqt) — Templates, security checklist, and deployment playbook
 
-📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
+👉 [Browse all products →](https://wolfpacksolution.gumroad.com)
     `.trim(),
     date: "2026-03-10",
     readTime: "5 min",
@@ -690,9 +702,12 @@ That's the WolfPack way. \ud83d\udc3a
 
 ---
 
-🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+🐺 **WolfPack Products:**
+- [AI Prompt Pack ($9.99)](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack) — 200 battle-tested AI coding prompts
+- [DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms) — Strategies, risk frameworks, and yield calculators
+- [Vibe Coder Starter Kit ($47)](https://wolfpacksolution.gumroad.com/l/knrqqt) — Templates, security checklist, and deployment playbook
 
-📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
+👉 [Browse all products →](https://wolfpacksolution.gumroad.com)
     `.trim(),
     date: "2026-03-07",
     readTime: "4 min",
@@ -746,9 +761,12 @@ The prompt is dead. The pipeline is alive. \ud83d\udc3a
 
 ---
 
-🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+🐺 **WolfPack Products:**
+- [AI Prompt Pack ($9.99)](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack) — 200 battle-tested AI coding prompts
+- [DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms) — Strategies, risk frameworks, and yield calculators
+- [Vibe Coder Starter Kit ($47)](https://wolfpacksolution.gumroad.com/l/knrqqt) — Templates, security checklist, and deployment playbook
 
-📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
+👉 [Browse all products →](https://wolfpacksolution.gumroad.com)
     `.trim(),
     date: "2026-03-03",
     readTime: "6 min",
@@ -795,9 +813,12 @@ That's the stack. Now go build something. \ud83d\udc3a
 
 ---
 
-🐺 **Free Resource:** Get 200 AI coding prompts free → [wolfpacksolution.gumroad.com/l/ai-prompt-pack](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack)
+🐺 **WolfPack Products:**
+- [AI Prompt Pack ($9.99)](https://wolfpacksolution.gumroad.com/l/ai-prompt-pack) — 200 battle-tested AI coding prompts
+- [DeFi Yield Farming Toolkit ($27)](https://wolfpacksolution.gumroad.com/l/vrioms) — Strategies, risk frameworks, and yield calculators
+- [Vibe Coder Starter Kit ($47)](https://wolfpacksolution.gumroad.com/l/knrqqt) — Templates, security checklist, and deployment playbook
 
-📚 **More from WolfPack:** [DeFi Toolkit ($9)](https://wolfpacksolution.gumroad.com/l/vrioms) · [Vibe Coder Kit ($14)](https://wolfpacksolution.gumroad.com/l/knrqqt)
+👉 [Browse all products →](https://wolfpacksolution.gumroad.com)
     `.trim(),
     date: "2026-02-28",
     readTime: "5 min",

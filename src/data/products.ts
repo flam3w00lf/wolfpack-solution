@@ -63,8 +63,8 @@ export const products: Product[] = [
       "Step-by-step yield farming guide with risk frameworks, protocol comparisons, and real strategies. No jargon, no hype.",
     longDescription:
       "Most DeFi guides are either too basic or assume you already know everything. This one meets you where you are. The DeFi Yield Farming Toolkit walks you through real yield farming strategies — from single-sided staking to multi-protocol loops — with honest risk assessments for each one. You get protocol comparison matrices so you can evaluate opportunities yourself, yield calculators that account for gas and impermanent loss, and a risk framework that tells you exactly what can go wrong before you commit capital. Written by builders who farm their own strategies.",
-    price: 9,
-    priceLabel: "$9",
+    price: 27,
+    priceLabel: "$27",
     category: "guide",
     rating: 4.6,
     reviewCount: 89,
@@ -113,8 +113,8 @@ export const products: Product[] = [
       "Everything you need to ship real apps with AI. Security checklist, 50 prompt templates, deployment playbook. From idea to production.",
     longDescription:
       "You don't need another tutorial. You need a system. The Vibe Coder Starter Kit is the complete playbook for building and shipping real applications with AI coding assistants. It includes 50+ battle-tested prompt templates that actually produce working code, a security checklist so you don't ship vulnerabilities, pre-configured project scaffolds for Next.js and Python, and a weekend launch guide that takes you from blank repo to deployed product. This is the kit we built for ourselves — then realized everyone else needed it too.",
-    price: 14,
-    priceLabel: "$14",
+    price: 47,
+    priceLabel: "$47",
     category: "guide",
     rating: 4.9,
     reviewCount: 156,
@@ -163,8 +163,8 @@ export const products: Product[] = [
       "200 battle-tested AI coding prompts. Copy-paste into Cursor, Copilot, or Claude. Covers debugging, security, architecture, deployment. Free, no catch.",
     longDescription:
       "Stop writing vague prompts and wondering why the AI gives you broken code. The AI Code Prompt Pack is a library of 200 prompts engineered specifically for software development — each one tested across Claude, GPT-4, and Gemini to produce consistent, working output. Copy-paste them into Cursor, Copilot, or any AI tool. Categories cover everything from debugging and refactoring to architecture design, security audits, and deployment. Includes a prompt composition framework for chaining prompts into complex, multi-step workflows. It's free because we want every developer using AI to have a better starting point.",
-    price: 0,
-    priceLabel: "FREE",
+    price: 9.99,
+    priceLabel: "$9.99",
     category: "guide",
     rating: 0,
     reviewCount: 0,
