@@ -24,6 +24,18 @@ export async function generateMetadata({
   };
 }
 
+function renderInlineMarkdown(text: string): string {
+  return text
+    .replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" class="text-wolf-orange hover:underline">$1</a>'
+    )
+    .replace(
+      /\*\*(.*?)\*\*/g,
+      '<strong class="text-white">$1</strong>'
+    );
+}
+
 export default async function BlogPostPage({
   params,
 }: {
@@ -88,9 +100,10 @@ export default async function BlogPostPage({
                 <h2
                   key={i}
                   className="text-2xl font-bold text-white mt-12 mb-4"
-                >
-                  {trimmed.replace("## ", "")}
-                </h2>
+                  dangerouslySetInnerHTML={{
+                    __html: renderInlineMarkdown(trimmed.replace("## ", "")),
+                  }}
+                />
               );
             }
 
@@ -103,9 +116,9 @@ export default async function BlogPostPage({
                       key={j}
                       className="text-zinc-400 leading-relaxed pl-4 border-l-2 border-wolf-orange/20"
                       dangerouslySetInnerHTML={{
-                        __html: item
-                          .replace(/^[-\d.]+\s*/, "")
-                          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>'),
+                        __html: renderInlineMarkdown(
+                          item.replace(/^[-\d.]+\s*/, "")
+                        ),
                       }}
                     />
                   ))}
@@ -118,10 +131,7 @@ export default async function BlogPostPage({
                 key={i}
                 className="text-zinc-400 leading-relaxed my-4"
                 dangerouslySetInnerHTML={{
-                  __html: trimmed.replace(
-                    /\*\*(.*?)\*\*/g,
-                    '<strong class="text-white">$1</strong>'
-                  ),
+                  __html: renderInlineMarkdown(trimmed),
                 }}
               />
             );
