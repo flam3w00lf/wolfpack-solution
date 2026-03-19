@@ -51,26 +51,37 @@ export async function POST(req: NextRequest) {
   // Try Supabase Storage first (production), fall back to local file (dev)
   let fileBuffer: Buffer | null = null;
 
-  try {
-    const { data, error: storageError } = await supabase.storage
-      .from(STORAGE_BUCKET)
-      .download(fileName);
+  const hasServiceKey = !!process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-    if (!storageError && data) {
-      const arrayBuffer = await data.arrayBuffer();
-      fileBuffer = Buffer.from(arrayBuffer);
+  if (hasServiceKey) {
+    try {
+      const { data, error: storageError } = await supabase.storage
+        .from(STORAGE_BUCKET)
+        .download(fileName);
+
+      if (!storageError && data) {
+        const arrayBuffer = await data.arrayBuffer();
+        fileBuffer = Buffer.from(arrayBuffer);
+      } else if (storageError) {
+        console.error(`Supabase Storage error for ${fileName}: ${storageError.message}`);
+      }
+    } catch (err) {
+      console.error(`Supabase Storage exception for ${fileName}:`, err);
     }
-  } catch {
-    // Supabase Storage not available, fall through to local
   }
 
   if (!fileBuffer) {
-    // Fallback: local file for development
+    // Fallback: local file (works in dev, and on Vercel if PDFs are bundled)
     try {
       const filePath = path.join(process.cwd(), "private", "products", fileName);
       fileBuffer = await readFile(filePath);
     } catch {
-      console.error(`PDF not found in storage or locally: ${fileName}`);
+      console.error(
+        `PDF not found: ${fileName}. ` +
+        (hasServiceKey
+          ? "Check that the 'products' bucket exists in Supabase Storage and PDFs are uploaded."
+          : "SUPABASE_SERVICE_ROLE_KEY is not set — add it in Vercel Environment Variables.")
+      );
       return NextResponse.json({ error: "File not available" }, { status: 500 });
     }
   }

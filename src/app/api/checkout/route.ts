@@ -36,8 +36,7 @@ export async function POST(req: NextRequest) {
         download_token: downloadToken,
         stripe_session_id: `free_${downloadToken}`,
         customer_email: null,
-        amount_paid: 0,
-        currency: "usd",
+        amount_cents: 0,
         download_count: 0,
         expires_at: expiresAt.toISOString(),
       });
