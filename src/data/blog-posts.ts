@@ -177,7 +177,7 @@ Here's what to do this week:
 - Add input validation to any endpoint that's currently trusting raw user data
 - Switch any \`Math.random()\` token generation to \`crypto.randomUUID()\`
 
-AI is the copilot. You're still the pilot. And the pilot checks the instruments before takeoff. If you're working with [open-source AI tools](/blog/open-source-ai-tools-2026), these security practices apply even more — there's no vendor safety net.
+AI is the copilot. You're still the pilot. And the pilot checks the instruments before takeoff. If you're working with [open-source AI tools](/blog/open-source-ai-tools-2026), these security practices apply even more — there's no vendor safety net. And if you're building in DeFi, the stakes are even higher — read our [beginner's guide to DeFi yield farming](/blog/defi-beginners-2026) to understand the landscape before you ship smart contract code.
 
 ---
 
@@ -698,7 +698,7 @@ Not life-changing money. But proof that people want this. And proof that you can
 
 Since launch, VibeSniffer has evolved into a full AI code security scanner — read about the [7 security risks in AI-generated code](/blog/ai-code-security-2026) we keep finding. And if you're curious which [AI coding tools actually work](/blog/best-ai-coding-tools), we tested them all.
 
-That's the WolfPack way. \ud83d\udc3a
+That's [the WolfPack way](/blog/why-we-built-wolfpack). \ud83d\udc3a
 
 ---
 
@@ -809,7 +809,7 @@ You don't need a $200/month API budget to build with AI. Open-source tools let y
 
 The best AI builders we know use a mix of everything. Open source for development, cloud APIs for production, and their own orchestration layer to tie it all together. For the full picture on commercial tools, check our [best AI coding tools in 2026](/blog/best-ai-coding-tools) breakdown. And when you're ready to think about prompts as infrastructure, read [why prompt architecture is replacing prompt engineering](/blog/prompt-engineering-is-dead).
 
-That's the stack. Now go build something. \ud83d\udc3a
+That's the stack. Now go build something — whether it's a [DeFi yield farming strategy](/blog/defi-beginners-2026) or the next [VibeSniffer](/blog/vibesniffer-launch-story). \ud83d\udc3a
 
 ---
 
